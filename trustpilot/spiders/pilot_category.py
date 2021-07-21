@@ -15,13 +15,13 @@ from w3lib.html import get_base_url
 class PilotSpider(Spider):
     name = 'pilot_category'
     allowed_domains = ['nl.trustpilot.com']
-    start_urls = ['https://nl.trustpilot.com/categories/animals_pets']
+    start_urls = ['https://nl.trustpilot.com/categories/construction_manufactoring']
     
 
     def parse(self, response):
 
         c_url=response.url
-        c_type='animals_pets'
+        c_type='onstruction_manufactoring'
         yield Request(c_url,callback=self.parse_category,meta={'c_type':c_type})
 
     
